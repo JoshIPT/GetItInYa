@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Leoxia.Network</name>
+    </assembly>
+    <members>
+        <member name="T:Leoxia.Network.IpAddressExtensions">
+            <summary>
+                Extensions on <see cref="T:System.Net.IPAddress" />
+            </summary>
+        </member>
+        <member name="M:Leoxia.Network.IpAddressExtensions.GetNetworkType(System.Net.IPAddress)">
+            <summary>
+                Gets the type of the network given the ip.
+            </summary>
+            <param name="address">The address.</param>
+            <returns>Type of network</returns>
+        </member>
+        <member name="M:Leoxia.Network.IpAddressExtensions.GetLocationInformation(System.Net.IPAddress)">
+            <summary>
+                Gets the location information.
+            </summary>
+            <param name="address">The address.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Leoxia.Network.IPLocationInformation">
+            <summary>
+                Stores location information of an ip address
+            </summary>
+        </member>
+        <member name="P:Leoxia.Network.IPLocationInformation.IsInDemilitarizedZone">
+            <summary>
+                The DMZ mean the ip is visible from internet
+            </summary>
+        </member>
+        <member name="P:Leoxia.Network.IPLocationInformation.IsInRealPrivateNetwork">
+            <summary>
+                The ip is part of internal RPN network
+            </summary>
+        </member>
+        <member name="P:Leoxia.Network.IPLocationInformation.NetworkType">
+            <summary>
+                The ip is part of private network or other type of networks
+            </summary>
+        </member>
+        <member name="T:Leoxia.Network.IPNetworkType">
+            <summary>
+                Type of network, an ip can belong to
+            </summary>
+        </member>
+        <member name="F:Leoxia.Network.IPNetworkType.Public">
+            <summary>
+                The default if not from other types
+            </summary>
+        </member>
+        <member name="F:Leoxia.Network.IPNetworkType.Private">
+            <summary>
+                Private networks
+            </summary>
+        </member>
+        <member name="F:Leoxia.Network.IPNetworkType.PrivateIsp">
+            <summary>
+                Used for communications between a service provider and its subscribers when using a carrier-grade NAT
+            </summary>
+        </member>
+        <member name="F:Leoxia.Network.IPNetworkType.Loopback">
+            <summary>
+                The host
+            </summary>
+        </member>
+        <member name="F:Leoxia.Network.IPNetworkType.Subnet">
+            <summary>
+                Used for link-local addresses between two hosts on a single link when no IP address is otherwise specified, such as
+                would have normally been retrieved from a DHCP server
+            </summary>
+        </member>
+        <member name="F:Leoxia.Network.IPNetworkType.Documentation">
+            <summary>
+                Not to be used publicly. Assigned as "TEST-NET" for use in documentation and examples.
+            </summary>
+        </member>
+        <member name="F:Leoxia.Network.IPNetworkType.IANARegistry">
+            <summary>
+                Used for the IANA IPv4 Special Purpose Address Registry
+            </summary>
+        </member>
+        <member name="F:Leoxia.Network.IPNetworkType.PrivateTest">
+            <summary>
+                Used for testing of inter-network communications between two separate subnets
+            </summary>
+        </member>
+        <member name="F:Leoxia.Network.IPNetworkType.Multicast">
+            <summary>
+                Reserved for multicast
+            </summary>
+        </member>
+        <member name="F:Leoxia.Network.IPNetworkType.Reserved">
+            <summary>
+                Reserved for future use
+            </summary>
+        </member>
+        <member name="F:Leoxia.Network.IPNetworkType.LimitedBroadcast">
+            <summary>
+                Reserved for the "limited broadcast" destination address
+            </summary>
+        </member>
+        <member name="T:Leoxia.Network.IpResolver">
+            <summary>
+                Resolve Ip from DNS.
+            </summary>
+        </member>
+        <member name="M:Leoxia.Network.IpResolver.#ctor(System.String[])">
+            <summary>
+                Initializes a new instance of the <see cref="T:Leoxia.Network.IpResolver" /> class.
+            </summary>
+            <param name="domainNameServerIps">The domain name server ips.</param>
+        </member>
+        <member name="M:Leoxia.Network.IpResolver.ResolveIp(System.String)">
+            <summary>
+                Resolves the domain name to an ip.
+            </summary>
+            <param name="domainName">Name of the domain.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Leoxia.Network.TcpPortProvider">
+            <summary>
+                Provides an available TCP port.
+            </summary>
+        </member>
+        <member name="M:Leoxia.Network.TcpPortProvider.GetTcpPortAvailable">
+            <summary>
+                Gets a random TCP port available.
+                Note that it will open it to find it.
+                Not thread safe.
+            </summary>
+            <returns>A available port</returns>
+        </member>
+        <member name="T:Leoxia.Network.TraceRoute">
+            <summary>
+                Trace Route tool
+                Comes from https://stackoverflow.com/questions/142614/traceroute-and-ping-in-c-sharp
+            </summary>
+        </member>
+        <member name="M:Leoxia.Network.TraceRoute.GetTraceRoute(System.String)">
+            <summary>
+                Gets the trace route.
+            </summary>
+            <param name="hostNameOrAddress">The host name or address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Leoxia.Network.TraceRoute.GetTraceRoute(System.String,System.Int32)">
+            <summary>
+                Gets the trace route.
+            </summary>
+            <param name="hostNameOrAddress">The host name or address.</param>
+            <param name="ttl">The TTL.</param>
+            <returns>the ip addresses.</returns>
+        </member>
+    </members>
+</doc>
